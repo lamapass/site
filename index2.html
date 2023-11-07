@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru"
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+</head>
+<title> Домашние задания по предмету "Основы web-технологий" за 2023-24 год</title>
+<header><strong><a style="margin-left: 400px"></a> Домашние задания по предмету "Основы web-технологий" за 2023-24 год</strong></header>
+<body>
+
+<table style=" align=center border=1 cellpadding=5 cellspacing=1 width=600px">
+
+    <tbody>
+    <tr>
+        <td>
+            <ul>
+                   <li><a href="index1.html" target="_blank">Паспорт.Считываем информацию из DOM</a>
+                </li><li><a href="index2.html" target="_blank"><strong>Изменяем кириллицу на латиницу по клику</strong></a>
+                </li><li><a href="index3.html" target="_blank">Решение алгоритмической задачи</a>
+            </li></ul>
+        </td>
+    </tr>
+    <tr>
+        <td> <select id="language-select">
+    <option value="en">English</option>
+    <option value="ru">Русский</option>
+</select>
+
+<div class="block1">ГУ МВД РОССИИ ПО ГОР. МОСКВЕ  </div>
+<div class="block2"> 06.04.2018</div>
+<div class="block3"> 770-002</div>
+
+<div class="block4" id="language1"> Лалакина </div>
+<div class="block5" id="language2"> Алена </div>
+
+<div class="block6"> Максимовна </div>
+<div class="block7"> жен. </div>
+<div class="block8"> 11.08.2004 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div class="block9"> гор.Москва </div>
+<div class="photo"> <img src="https://skolko-stoyat.ru/wp-content/uploads/2022/05/2-16.jpg" height="160" width="120"/></div>
+</td>
+    </tr>
+
+<script>
+    const languageSelect = document.getElementById('language-select');
+    const language1 = document.getElementById('language1');
+    const language2 = document.getElementById('language2');
+
+    languageSelect.addEventListener('change', function() {
+        if (this.value === 'en') {
+            language1.textContent = 'Lalakina';
+            language2.textContent = 'Alena';
+        } else if (this.value === 'ru') {
+            language1.textContent = 'Лалакина';
+            language2.textContent = 'Алена';
+        }
+    });
+</script>
+
+</tbody></table>
+</body>
+</html>
