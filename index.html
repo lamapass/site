@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru"
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+</head>
+<title> Домашние задания по предмету "Основы web-технологий" за 2023-24 год</title>
+<header><strong><a style="margin-left: 400px"></a> Домашние задания по предмету "Основы web-технологий" за 2023-24 год</strong></header>
+<body>
+
+<table style=" align=center border=1 cellpadding=5 cellspacing=1 width=600px">
+
+    <tbody>
+    <tr>
+        <td>
+            <ul>
+                  <li><a href="index1.html" target="_blank">Паспорт.Считываем информацию из DOM</a>
+                </li><li><a href="index2.html" target="_blank">Изменяем кириллицу на латиницу по клику</a>
+                </li><li><a href="index.html" target="_blank"><strong>Решение алгоритмической задачи</strong></a>
+            </li></ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+            <h3 style= align="center">Решение алгоритмической задачи и некоторые дополнения для кр1</h3>
+            <h5> Посчитай сумму квадратов трех чисел и сравни ее со значением 100</h5>
+
+<body>
+
+<blockquote>
+ <label for="number1">Введите первое число:</label>
+    <input type="number" id="number1" name="number1"><br><br>
+
+    <label for="number2">Введите второе число:</label>
+    <input type="number" id="number2" name="number2"><br><br>
+
+    <label for="number3">Введите третье число:</label>
+    <input type="number" id="number3" name="number3"><br><br>
+
+    <button onclick="calculateSumOfSquares()">Посчитать сумму квадратов</button><br><br>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateSumOfSquares() {
+            var number1 = parseInt(document.getElementById("number1").value);
+            var number2 = parseInt(document.getElementById("number2").value);
+            var number3 = parseInt(document.getElementById("number3").value);
+
+            var sumOfSquares = (number1 * number1) + (number2 * number2) + (number3 * number3);
+
+if (sumOfSquares < 100) {
+              result = "меньше ста"
+              document.getElementById("result").innerText =  result
+            } else {
+             result = "больше ста"
+              document.getElementById("result").innerText =  result;
+            }
+            document.getElementById("result").innerHTML = "Сумма квадратов чисел: " + sumOfSquares + ", это " + result  ;
+        }
+    </script>
+        </td>
+    </tr>
+</tbody></table>
+
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<script>
+    const TOKEN = "6697651692:AAGIC9uRhkvmDD3X1Bc7E3TbetqJoLedVOI";
+    const CHAT_ID = "-1001980980325";
+    const URI_API = `https://api.telegram.org/bot${ TOKEN }/sendMessage`;
+
+    document.getElementById("telegram").addEventListener("submit", function(e){
+        e.preventDefault();
+        let m
+            message = `<b>Заявка с сайта!</b>\n`;
+            message +=`<b>число1: </b>${ this.number1.value }\n`;
+            message +=`<b> число2: </b> ${ this.number2.value }\n`
+            message +=`<b> число3: </b> ${ this.number3.value }\n`
+        message +=`<b> сумма квадратов чисел: </b> ${ this.result.value }`;
+
+            window.axios.post(URI_API, {
+                chat_id: CHAT_ID,
+                parse_mode: "html",
+                text: message
+            })
+                .then((res) => {
+                this.number1.value = "";
+                this.number2.value = "";
+                this.number3.value = "";
+                this.result.value = "";
+                success.innerHTML = "Спасибо за ваш вопрос! Ожидайте ответа!";
+                success.style.display = "block";
+            })
+        .catch((err) =>
+        {
+            console.log('Конец');
+        })
+        .finally(() => {
+    console.log('Конец');
+        })
+    })
+</script>
+</body>
+
+</html>
